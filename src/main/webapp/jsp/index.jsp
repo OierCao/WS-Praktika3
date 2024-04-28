@@ -8,24 +8,24 @@
 
 <body>
 	<header>
-		<h1>Gestor de imágenes SVG en  base de datos eXist</h1>
+		<h1>Gestor de imï¿½genes SVG en  base de datos eXist</h1>
 		<h2>Sistemas Web 2024</h2>
 	</header>
 
 	<%	if (request.getAttribute("informacion") != null) {	%>
 	<section>
-		<font>Información:</font>
+		<font>Informaciï¿½n:</font>
 		<%=request.getAttribute("informacion")%>
 	</section>
 	<% 	} %>
 	
 	<section>
 	 <table><tr>
-        <td style="width:150px; background-color:#d7dbdd"><h4>Mostrar las imágenes SVG de una colección</h4></td>
+        <td style="width:150px; background-color:#d7dbdd"><h4>Mostrar las imï¿½genes SVG de una colecciï¿½n</h4></td>
 		<td style="width:600px">
 			<form id="LeerRecursos" method="GET" action="/GestorSvg/apiLR">
 				<table><tr>
-					<td>Introducir nombre de la colección:</td>
+					<td>Introducir nombre de la colecciï¿½n:</td>
 					<td><input required name="collection"></td>
 				</tr></table>			
 			<hr>
@@ -39,11 +39,11 @@
 	
 	<section>
 	 <table><tr>
-	 	<td style="width:150px; background-color:#d7dbdd"><h4>Crear una nueva colección de imágenes SVG</h4></td>
+	 	<td style="width:150px; background-color:#d7dbdd"><h4>Crear una nueva colecciï¿½n de imï¿½genes SVG</h4></td>
 		<td style="width:600px">
 			<form id="CrearColeccion" method="GET" action="/GestorSvg/apiCC">
 				<table><tr>
-					<td>Introducir nombre de la colección:</td>
+					<td>Introducir nombre de la colecciï¿½n:</td>
 					<td><input required name="collection"></td>
 				</tr></table>
 			
@@ -55,14 +55,14 @@
 	</section>
 	<section>
 	  <table><tr>
-	  	<td style="width:150px; background-color:#d7dbdd"><h4>Crear una nueva imagen SVG (en blanco) en una colección</h4></td>
+	  	<td style="width:150px; background-color:#d7dbdd"><h4>Crear una nueva imagen SVG (en blanco) en una colecciï¿½n</h4></td>
 		<td style="width:600px">
 			<form id="ImagenNueva" method="GET" action="/GestorSvg/apiNI">
 				<table><tr>
 					<td>Nombre de la nueva imagen SVG:</td>
 					<td><input required name="svgName"></td>
 				</tr><tr>
-					<td>Colección destino de la imagen</td>
+					<td>Colecciï¿½n destino de la imagen</td>
 					<td><input required name="collection"></td>
 				</tr></table>
 			
@@ -75,24 +75,33 @@
 
 	 
    <script>
-        function leerArchivo() {
-          
-        }
+	   function leerArchivo() {
+		   var fileInput = document.getElementById('fileInput');
+		   var file = fileInput.files[0];
+		   var reader = new FileReader();
+
+		   reader.onload = function(e) {
+			   var contenidoArchivo = document.getElementById('contenidoArchivo');
+			   contenidoArchivo.value = e.target.result;
+		   };
+
+		   reader.readAsText(file);
+	   }
     </script>
 	 
 		
 
 	<section>
 	 <table><tr>
-	 	<td style="width:150px; background-color:#d7dbdd"><h4>Borrar una colección de imagenes SVG</h4></td>
+	 	<td style="width:150px; background-color:#d7dbdd"><h4>Borrar una colecciï¿½n de imagenes SVG</h4></td>
 		<td style="width:600px">
 			<form id="BorrarColeccion" method="GET" action="/GestorSvg/apiDC">
 				<table><tr>
-					<td>Introducir nombre de la colección:</td>
+					<td>Introducir nombre de la colecciï¿½n:</td>
 					<td><input  required name="collection"></td>
 				</tr></table>
 			<hr>
-			<button form="BorrarColeccion">Borrar colección</button>
+			<button form="BorrarColeccion">Borrar colecciï¿½n</button>
 			</form>
 		</td>
 	</tr></table>
@@ -100,7 +109,7 @@
 	
 	 <section>
 	  <table><tr>
-	  	<td style="width:150px; background-color:#d7dbdd"><h4>Sube una imagen SVG desde un archivo a un colección</h4></td>
+	  	<td style="width:150px; background-color:#d7dbdd"><h4>Sube una imagen SVG desde un archivo a un colecciï¿½n</h4></td>
 		<td style="width:600px">
 	
 				<input type="file" id="fileInput" accept=".svg" /> 
@@ -113,7 +122,7 @@
 					<td>Nombre de la nueva imagen SVG:</td>
 					<td><input id="nombreArchivo" required name="svgName"></td>	
 				</tr><tr>
-					<td>Colección destino de la imagen</td>
+					<td>Colecciï¿½n destino de la imagen</td>
 					<td><input required name="collection"></td>
 				</tr></table>
 				<hr>
@@ -123,6 +132,6 @@
 	</tr></table>
 	</section>
 
-	<footer><h5>Sistemas Web - Escuela Ingeniería de Bilbao</h5></footer>
+	<footer><h5>Sistemas Web - Escuela Ingenierï¿½a de Bilbao</h5></footer>
 </body>
 </html>

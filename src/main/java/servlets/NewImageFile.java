@@ -19,13 +19,14 @@ public class NewImageFile extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String fileName = req.getParameter("imagenSVG");
+        String fileContent = req.getParameter("imagenSVG");
         String collection = req.getParameter("collection");
+        String image = req.getParameter("svgName");
 
-        int status = eXist.subir(collection, fileName);
+        int status = eXist.subirString(collection, fileContent, image);
 
         if (status == 201) {
-            req.setAttribute("informacion", fileName + " argazki hutsa sortu da " + collection + " kolekzioan.");
+            req.setAttribute("informacion", image + " argazki hutsa sortu da " + collection + " kolekzioan.");
         } else {
             req.setAttribute("informacion", "Arazo bat egon da. Saiatu berriro. (Código "+status+")");
         }
