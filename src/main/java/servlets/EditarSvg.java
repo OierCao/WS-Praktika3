@@ -18,9 +18,9 @@ public class EditarSvg extends HttpServlet {
 	private HTTPeXist eXist;
 
 	public void init(ServletConfig config) {
-		System.out.println("---> Entrando en init()de listResource");
+		System.out.println("---> Entrando en init()de EditarSvg");
 		eXist = new HTTPeXist("http://localHost:8080");
-		System.out.println("---> Saliendo de init()de LoginServlet");
+		System.out.println("---> Saliendo de init()de EditarSvg");
 	}
 	
  

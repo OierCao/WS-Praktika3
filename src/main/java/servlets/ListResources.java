@@ -26,9 +26,9 @@ public class ListResources extends HttpServlet {
 
 	
 	public void init(ServletConfig config) {
-		System.out.println("---> Entrando en init()de listResource");
+		System.out.println("---> Entrando en init()de ListResources");
 		eXist = new HTTPeXist("http://localHost:8080");
-		System.out.println("---> Saliendo de init()de LoginServlet");
+		System.out.println("---> Saliendo de init()de ListResources");
 	}
 	
 	

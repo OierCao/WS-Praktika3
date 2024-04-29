@@ -13,9 +13,9 @@ import java.io.IOException;
 public class NewImage extends HttpServlet {
     private HTTPeXist eXist;
     public void init(ServletConfig config) {
-        System.out.println("---> Entrando en init()de listResource");
+        System.out.println("---> Entrando en init()de NewImage");
         eXist = new HTTPeXist("http://localHost:8080");
-        System.out.println("---> Saliendo de init()de LoginServlet");
+        System.out.println("---> Saliendo de init()de NewImage");
     }
 
     @Override
